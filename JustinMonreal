@@ -1,0 +1,355 @@
+1. Let u = (1, -2, 4) and v = (3,5,1) w = (2,1,-3) find:
+	a. 3u - 2v
+= 3(1,−2,4) − 2(3,5,1) 
+= (3,−6,12) − (6,10,2) 
+= (−3,−16,10)
+= -9
+ Pythonic Solution:
+u = np.array([1, -2, 4])
+v = np.array([3, 5, 1])
+w = np.array([2, 1, -3])
+result = 3*u - 2*v
+print(" 3u - 2v:", result_1)
+
+	b. 5u + 3v – 4w
+= 5(1,−2,4) + 3(3,5,1) − 4(2,1,−3) 
+= (5,−10,20) + (9,15,3) − (8,4,−12) 
+= (6,1,11)
+= 18
+Pythonic Solution:
+u = np.array([1, -2, 4])
+v = np.array([3, 5, 1])
+w = np.array([2, 1, -3])
+result = 5 * u + 3 * v - 4 * w
+print("5u + 3v - 4w:", result_2)
+
+	c. u*v, v*w, u*w
+ u⋅v=(1)(3)+(-2)(5)+(4)(1)=3-10+4=-3
+ v⋅w=(3)(2)+(5)(1)+(1)(-3)=6+5-3=8
+u⋅w=(1)(2)+(-2)(1)+(4)(-3)=2-2-12=-12 
+Pythonic Solution:
+u = np.array([1, -2, 4])
+v = np.array([3, 5, 1])
+w = np.array([2, 1, -3])
+dot_product_uv = np.dot(u, v)
+dot_product_vw = np.dot(v, w)
+dot_product_uw = np.dot(u, w)
+print("u*v:", dot_product_uv)
+print("   v*w:", dot_product_vw)
+print("   u*w:", dot_product_uw)
+
+	d. ||u||,||\textbf{v}||, ||w||
+ |(|u|)|= √(1^2+〖(-2)〗^2+ 4^2 )= √(1+4+16)= √(-21)  
+                |(|v|)|= √(3^2+ 5^2+1^2 )=√(9+25+1)=√35
+|(|w|)|= √(2^2+1^2+〖(-3)〗^2 )=√(4+1+9)=√14 
+Pythonic Solution:
+u = np.array([1, -2, 4])
+v = np.array([3, 5, 1])
+w = np.array([2, 1, -3])
+norm_u = np.linalg.norm(u)
+norm_v = np.linalg.norm(v)
+norm_w = np.linalg.norm(w)
+print("||u||:", norm_u)
+print("   ||v||:", norm_v)
+print("   ||w||:", norm_w)
+
+	e. If θ is the angle between u and v, find cos θ.
+ cos θ=(u∙v)/(||u||∙||v||)=(-3)/√(21∙√14)   
+ Pythonic Solution:
+u = np.array([1, -2, 4])
+v = np.array([3, 5, 1])
+w = np.array([2, 1, -3])
+cos_theta = np.dot(u, v) / (np.linalg.norm(u) * np.linalg.norm(v))
+print("cos θ:", cos_theta)
+
+	f. If α, is the angle between v and w, find cos α.
+ cos α=  (u∙v)/(||u||∙||v||)=8/√(35∙√14)   
+ Pythonic Solution:
+u = np.array([1, -2, 4])
+v = np.array([3, 5, 1])
+w = np.array([2, 1, -3])
+cos_alpha = np.dot(v, w) / (np.linalg.norm(v) * np.linalg.norm(w))
+print("cos α:", cos_alpha)
+
+	g. If β is the angle between u and w, find cos β.
+Cos β = (u∙v)/(||u||∙||v||)=(-12)/√(21∙√14) 
+ Pythonic Solution:
+u = np.array([1, -2, 4])
+v = np.array([3, 5, 1])
+w = np.array([2, 1, -3])
+cos_beta = np.dot(u, w) / (np.linalg.norm(u) * np.linalg.norm(w))
+print("cos β:", cos_beta)
+	h. Find d(u,v)
+ =|(|u-v|)|=|(|(1,-2,4)|)|-||(3,5,1)||
+ =|(|-2,-7,3|)|
+ d=√(4+49+9)
+Pythonic Solution:
+u = np.array([1, -2, 4])
+v = np.array([3, 5, 1])
+w = np.array([2, 1, -3])
+distance_uv = np.linalg.norm(u - v)
+print(" d(u,v):", distance_uv)
+	i. Find d(w,v)
+  =∥w-v||=|(|(3,5,1)|)|-||(2,1,-3)||
+  =∥(-1,-4,-4)∥=√(1+16+16) 
+Pythonic Solution:
+u = np.array([1, -2, 4])
+v = np.array([3, 5, 1])
+w = np.array([2, 1, -3])
+distance_wv = np.linalg.norm(w - v)
+print("d(w,v):", distance_wv)
+	j. Find d(u,w)
+ =∥u-w∥=||(1,-2,4)||-||(2,1,-3)||
+  =∥(1,-3,7)∥=1+9+49
+Pythonic Solution:
+u = np.array([1, -2, 4])
+v = np.array([3, 5, 1])
+w = np.array([2, 1, -3])
+distance_uw = np.linalg.norm(u - w)
+print("d(u,w):", distance_uw)
+
+	k. Find proj(u,v).
+ proj(u,v) = ((u∙v)/( 〖||v||〗^2 )) ∙ v
+Pythonic Solution:
+u = np.array([1, -2, 4])
+v = np.array([3, 5, 1])
+w = np.array([2, 1, -3])
+proj_uv = (np.dot(u, v) / np.dot(v, v)) * v
+print(" proj(u,v):", proj_uv)
+
+	l. Find proj(w,v).
+ proj(u,v) = ((w∙v)/( 〖||v||〗^2 )) ∙ v
+Pythonic Solution:
+u = np.array([1, -2, 4])
+v = np.array([3, 5, 1])
+w = np.array([2, 1, -3])
+proj_wv = (np.dot(w, v) / np.dot(v, v)) * v
+print(" proj(w,v):", proj_wv)
+
+	m. Find proj(u,w)
+       proj(u,v) = ((u∙w)/( 〖||w||〗^2 )) ∙ w
+Pythonic Solution:
+u = np.array([1, -2, 4])
+v = np.array([3, 5, 1])
+w = np.array([2, 1, -3])
+proj_uw = (np.dot(u, w) / np.dot(w, w)) * w
+print(" proj(u,w):", proj_uw)
+
+
+
+
+
+
+2. Repeat problem 1 with the following column vectors:
+
+
+
+
+
+
+
+
+3. Let u=(2,-5,4,6,-3),v=(5,-2,1,-7,-4),and w=(2,1,-3)find:     
+	a. 4u - 3v
+  = (8,-20,16,24,-12) - (15,-6,3,-21,-12) 
+  = (-7,-14,13,45,0)
+Pythonic Solution:
+u = np.array([2, -5, 4, 6, -3])
+v = np.array([5, -2, 1, -7, -4])
+w = np.array([2, 1, -3])
+result_1 = 4 * u - 3 * v
+print("4u - 3v:", result_1)
+	b. 5u + 2v – 2w
+= (10,-25,20,30,-15)+ (10,-4,2,-14,-8)– (4,2,-6) 
+ = (16,-27,24,44,-7)
+Pythonic Solution:
+u = np.array([2, -5, 4, 6, -3])
+v = np.array([5, -2, 1, -7, -4])
+w = np.array([2, 1, -3])
+result_2 = 5 * u + 2 * v - 2 * w
+print("5u + 2v - 2w:", result_2)
+	c. u*v, v*w, u*w
+ u∙v=(2∙5)+(-5∙2)+(4∙1)+(6∙-7)+(-3∙-4)=10+10+4-42+12=-6
+ u∙w=(5∙2)+(-2∙1)+(1∙-3)+(-7∙0)+(-4∙0)=10-2-3+0+0=5
+ u∙w=(2∙2)+(-5∙1)+(4∙3)+(6∙0)+(-3∙0)=4-5-12+0+0=-13
+Pythonic Solution:
+u = np.array([2, -5, 4, 6, -3])
+v = np.array([5, -2, 1, -7, -4])
+w = np.array([2, 1, -3])
+dot_product_uv = np.dot(u, v)
+dot_product_vw = np.dot(v, w)
+dot_product_uw = np.dot(u, w)
+print(" u*v:", dot_product_uv)
+print(" v*w:", dot_product_vw)
+print(" u*w:", dot_product_uw)
+	 d. ||u||, ||v||, ||w||
+ |(|u|)|= √(〖(2〗^2+〖(-5)〗^2+4^2+6^2+〖(-3)〗^2))=√(4+25+16+36+9)=√90
+ |(|v|)|=√((5^2+(-2)^2+1^2+(-7)^2+(-4)^2 ) )=√(25+4+1+49+16)=√95
+ |(|w|)|=√((2^2+1^2+〖(-3)〗^2 )=√(4+1+9)=√14
+Pythonic Solution:
+u = np.array([2, -5, 4, 6, -3])
+v = np.array([5, -2, 1, -7, -4])
+w = np.array([2, 1, -3])
+norm_u = np.linalg.norm(u)
+norm_v = np.linalg.norm(v)
+norm_w = np.linalg.norm(w)
+print("||u||:", norm_u)
+print(" ||v||:", norm_v)
+print(" ||w||:", norm_w)
+	 e. If θ is the angle between u and v, find cos θ.
+ cos θ =(u∙v)(u∙v)/(||u||∙||v||)=(-6)/(√(90∙) √95)
+Pythonic Solution:
+u = np.array([2, -5, 4, 6, -3])
+v = np.array([5, -2, 1, -7, -4])
+w = np.array([2, 1, -3])
+cos_theta = dot_product_uv / (norm_u * norm_v)
+print("5. cos θ:", cos_theta)
+	f. If α, is the angle between v and w, find cos α.
+ cos α =(v∙w)(v∙w)/(||v||∙||w||)=(-5)/(√(95∙) √14)
+Pythonic Solution:
+u = np.array([2, -5, 4, 6, -3])
+v = np.array([5, -2, 1, -7, -4])
+w = np.array([2, 1, -3])
+cos_theta = dot_product_uv / (norm_u * norm_v)
+print("6. cos α:", cos_alpha)
+	g. If β is the angle between u and w, find cos β.
+ cos β =(u∙w)(u∙w)/(||u||∙||w||)=(-13)/(√(90∙) √14)
+Pythonic Solution:
+u = np.array([2, -5, 4, 6, -3])
+v = np.array([5, -2, 1, -7, -4])
+w = np.array([2, 1, -3])
+cos_alpha = dot_product_vw / (norm_v * norm_w)
+print("7. cos β:", cos_beta)
+	h. Find d(u,v)
+ d(u,v) = ||u - v|| = ||(2,-5,4,6,-3) - (5,-2,1,-7,-4)|| = ||(-3,-3,3,13,1)|| = √((〖(-3)〗^2  + 〖(-3) 〗^2+ 〖3 〗^2+〖 13〗^2  + 1^2))
+Pythonic Solution:
+u = np.array([2, -5, 4, 6, -3])
+v = np.array([5, -2, 1, -7, -4])
+w = np.array([2, 1, -3])
+distance_uv = np.linalg.norm(u - v)
+print(" d(u,v):", distance_uv)
+
+	i. Find d(w,v)
+ d(w,v)= |(|w – v|)|= |(|(2,1,-3)– (5,-2,1)|)|= |(|-3,3,-4|)|
+ =√(((-3)^2+3^2+〖(-4)〗^2))
+Pythonic Solution:
+u = np.array([2, -5, 4, 6, -3])
+v = np.array([5, -2, 1, -7, -4])
+w = np.array([2, 1, -3])
+distance_wv = np.linalg.norm(w - v)
+	j. Find d(u,w)
+ d(u,w)= |(|u – w|)|= |(|(2,-5,4,6,-3)– (2,1,-3)|)|= |(|0,-6,7,3,0|)|
+ =√( (6^2  +〖 7〗^2  + 3^2))
+Pythonic Solution:
+u = np.array([2, -5, 4, 6, -3])
+v = np.array([5, -2, 1, -7, -4])
+w = np.array([2, 1, -3])
+distance_uv = np.linalg.norm(u - v)
+print(" d(u,w):", distance_uw)
+
+	k. Find proj(u,v).
+ proj(u,v) = ((u∙v)/( 〖||v||〗^2 )) ∙ v
+Pythonic Solution:
+u = np.array([2, -5, 4, 6, -3])
+v = np.array([5, -2, 1, -7, -4])
+w = np.array([2, 1, -3])
+proj_uv = (np.dot(u, v) / np.dot(v, v)) * v
+print(" proj(u,v):", proj_uv)
+
+	 l. Find proj(w,v).
+ proj(u,v) = ((w∙v)/( 〖||v||〗^2 )) ∙ v
+Pythonic Solution:
+u = np.array([2, -5, 4, 6, -3])
+v = np.array([5, -2, 1, -7, -4])
+w = np.array([2, 1, -3])
+proj_wv = (np.dot(w, v) / np.dot(v, v)) * v
+print(" proj(w,v):", proj_wv)
+	m. Find proj(u,w)
+ proj(u,v) = ((u∙w)/( 〖||w||〗^2 )) ∙ w
+Pythonic Solution:
+u = np.array([2, -5, 4, 6, -3])
+v = np.array([5, -2, 1, -7, -4])
+w = np.array([2, 1, -3])
+proj_uw = (np.dot(u, w) / np.dot(w, w)) * w
+print(" proj(u,w):", proj_uw)
+
+
+
+
+
+4. Normalize each vector:
+a.   u=(5,-7).
+= |(|u|)|=√(5^2+ 〖-7〗^2 )=√74
+= u/(||u||)=5/√74,(-7)/√74
+Pythonic Solutions:
+u = np.array([5, -7])
+v = np.array([1, 2, -2, 4])
+w = np.array([1/2, -1/3, 3/4])
+norm_u = np.linalg.norm(u)
+u_normalized = u / norm_u
+print("a. u_normalized:", u_normalized)
+
+b.v=(1,2,-2,4).
+= |(|v|)|=√(1^2+2^2+〖(-2)〗^2+4^2=√21) 
+=  v/(||v||)=1/√21,2/√21,(-2)/√21,4/√21  
+c.w=(1/2,(-1)/3,3/4).
+Pythonic Solutions:
+u = np.array([5, -7])
+v = np.array([1, 2, -2, 4])
+w = np.array([1/2, -1/3, 3/4])
+norm_v = np.linalg.norm(v)
+v_normalized = v / norm_v
+print("b. v_normalized:", v_normalized)
+
+= |(|w|)|=√((1/2 )^2+((-1)/3)^2+(3/4)^2=√(14/6)) 
+=w/|(|w|)| =1/(2√14),(-1)/(3√14),3/(4√14)
+Pythonic Solutions:
+u = np.array([5, -7])
+v = np.array([1, 2, -2, 4])
+w = np.array([1/2, -1/3, 3/4])
+norm_w = np.linalg.norm(w)
+w_normalized = w / norm_w
+print("c. w_normalized:", w_normalized)
+
+5. Let u=(1,2,-2),v=(3,-12,4)and a scalar k= -3:
+Find ||u||,||v||,||u + v||, ||ku||.
+ |(|u|)|=√(1^2+2^2+〖(-2)〗^2 )=√(1+4+4)=√9=3
+ |(|v|)|=√(3^2+〖(-12)〗^2+4^2 )=√(9+144+16)=√169=13
+
+ u+v=(1+3,2-12,-2+4)=(4,-10,2)
+ |(|u+v|)|=√(4^2+〖(-10)〗^2+2^2=√(16+100+4)=√120) 
+
+ ku=-3∙(1,2,-2)=(-3,-6,6)
+ |(|ku|)|=√(〖(-3)〗^2+〖(-6)〗^2+6^2=√(9+36+36)=√81=9)
+ k=9
+Pythonic Solutions:
+u = np.array([1, 2, -2])
+v = np.array([3, -12, 4])
+k = -3
+norm_u = np.linalg.norm(u)
+norm_v = np.linalg.norm(v)
+u_plus_v = u + v
+norm_u_plus_v = np.linalg.norm(u_plus_v)
+ku = k * u
+norm_ku = np.linalg.norm(ku)
+print("||u||:", norm_u)
+print("||v||:", norm_v)
+print("||u + v||:", norm_u_plus_v)
+print("||ku||:", norm_ku)
+
+6. Find k so that u and v are orthogonal.
+  a.u=(3,k,-2),v=(6,-4,-3). 
+ b.u=(5,k,-4,2)  v=(1,-3,2 ,2k).
+ c.u=(1,7,k+2,-2),v=(3,k,-3,k).
+
+ a.   u∙v=3∙6+k∙-4+-2∙-3=0
+ 18-4k+6=0
+ -4k=-24
+ k=6
+ b.   u∙v=5∙1+k∙-3±4∙2+2∙2k=0
+ 5-3k-8+4k=0
+ k=3
+ c.   u∙v=1∙3+7∙k+(k+2)∙-3+-2∙k=0
+ 3+7k-3k-6-2k=0
+ 2k=3
+ k=3/2
